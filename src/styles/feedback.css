@@ -1,0 +1,290 @@
+/* ================================================================
+   SYNAPTO AI SYSTEMS — Feedback Page Styles
+   ================================================================ */
+
+.page-feedback {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.feedback-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 460px;
+  justify-self: center;
+}
+
+.visual-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 360px;
+}
+
+/* ===== Form Panel ===== */
+.form-panel,
+.success-panel {
+  position: relative;
+  width: 100%;
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  overflow: hidden;
+}
+
+.success-panel {
+  text-align: center;
+  padding: 40px 28px;
+}
+
+/* Glows */
+.panel-glow,
+.reward-glow,
+.success-glow {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.3;
+}
+.panel-glow {
+  top: -60px;
+  left: -40px;
+  background: var(--cyan);
+}
+.reward-glow {
+  bottom: -40px;
+  right: -40px;
+  background: var(--cyan);
+  opacity: 0.15;
+}
+.success-glow {
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-success);
+  opacity: 0.25;
+}
+
+/* ===== Panel Header ===== */
+.panel-header {
+  text-align: center;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.panel-title {
+  font-size: clamp(1.4rem, 3vw, 1.7rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-top: 12px;
+}
+
+.panel-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* ===== Star Rating ===== */
+.star-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.star-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--t-fast);
+  color: var(--text-tertiary);
+}
+.star-btn:hover {
+  transform: scale(1.15) rotate(-8deg);
+}
+.star-btn:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.star-idle {
+  color: var(--text-tertiary);
+  opacity: 0.4;
+}
+.star-active {
+  color: var(--accent-warn);
+  fill: var(--accent-warn);
+  filter: drop-shadow(0 0 10px rgba(250, 204, 21, 0.5));
+}
+
+/* ===== Form Layout ===== */
+.feedback-form {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== Inputs (uses shared .cyber-input / .cyber-textarea / .field-label from App.css) ===== */
+
+/* ===== Warning Bar ===== */
+.warn-bar {
+  text-align: center;
+  padding: 12px;
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  background: rgba(250, 204, 21, 0.05);
+  border-radius: var(--radius-sm);
+  animation: pulse-border 2s infinite;
+}
+
+.warn-bar p {
+  font-size: 0.75rem;
+  color: #fde68a;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.warn-link {
+  font-size: 0.72rem;
+  color: var(--cyan);
+  font-weight: 800;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  letter-spacing: 0.05em;
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(250, 204, 21, 0.3); }
+  50% { border-color: rgba(250, 204, 21, 0.6); }
+}
+
+/* ===== Submit Button — uses shared .cta-button .primary .submit-btn ===== */
+.arrow-rtl {
+  transform: scaleX(-1);
+}
+
+/* ===== Success Panel ===== */
+.success-node {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  border: 1px solid rgba(0, 255, 157, 0.4);
+  background: rgba(0, 255, 157, 0.08);
+  color: var(--accent-success);
+}
+
+.reward-card {
+  position: relative;
+  background: var(--cyan-dim);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  text-align: start;
+}
+
+.reward-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.reward-text {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.ghost-link {
+  background: none;
+  border: none;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color var(--t-fast);
+  margin-top: 12px;
+}
+.ghost-link:hover {
+  color: var(--text-primary);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1023px) {
+  .feedback-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .visual-column {
+    order: -1;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 639px) {
+  .form-panel,
+  .success-panel {
+    padding: 24px 20px;
+  }
+  .success-panel {
+    padding: 32px 20px;
+  }
+  .panel-header {
+    margin-bottom: 20px;
+  }
+  .reward-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 479px) {
+  .star-btn {
+    padding: 4px;
+  }
+  .panel-title {
+    font-size: 1.3rem;
+  }
+}
